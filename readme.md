@@ -62,8 +62,7 @@ To prove functional implementation, this repository includes the following artif
 ```text
 ├── README.md                          # Project documentation & architecture overview
 ├── LAB_INSTRUCTIONS.md                # Step-by-step Tinker lab guide & technical checkpoints
-├── update-sets/
-│   └── SN_VIP_Network_Escalation.xml  # Exported ServiceNow Update Set containing the Flow
+├── SN_VIP_Network_Escalation.xml      # Exported ServiceNow Update Set containing the Flow
 └── screenshots/
     ├── 01_baseline_incident_form.png  # Proof of VIP user setup & baseline Incident table
     ├── 02_flow_designer_logic.png     # Full Flow Designer canvas showing Trigger, Conditions & Data Pills
@@ -76,15 +75,24 @@ To prove functional implementation, this repository includes the following artif
 ## 📸 Implementation Walkthrough & Proof of Work
 
 ### 1. Trigger & Relational Condition Logic
-*(Insert `screenshots/02_flow_designer_logic.png` here after completing the lab)*
+![Flow Designer logic](screenshots/02_flow_designer_logic.png)
+
 * **What this shows:** Configured a record trigger on the `Incident [incident]` table. Used dot-walking (`Caller -> VIP is true`) combined with category evaluation to isolate critical tickets without writing brittle client scripts.
 
 ### 2. Dynamic Record Mutation & Work Notes
+![Baseline incident form](screenshots/01_baseline_incident_form.png)
+
 * **What this shows:** Used the **Update Record** action block with dynamic Data Pills (`Trigger -> Incident Record -> Caller -> Name`) to stamp an auditable work note directly into the ticket's activity stream while reassigning ownership to the `Network` group.
 
 ### 3. Execution Validation & Debugging
-*(Insert `screenshots/03_flow_execution_test.png` here after completing the lab)*
+![Flow execution test](screenshots/03_flow_execution_test.png)
+
 * **What this shows:** Verified end-to-end execution using Flow Designer's built-in testing engine, inspecting the runtime execution context to confirm zero errors and sub-second processing time.
+
+### 4. Updated Incident Audit
+![Updated incident audit](screenshots/04_updated_incident_audit.png)
+
+* **What this shows:** Confirmed the completed escalation: P1 priority, assignment to the Network group, and the automatic escalation work note recorded on the incident.
 
 ---
 
@@ -93,5 +101,5 @@ If you have your own ServiceNow Personal Developer Instance (PDI), you can deplo
 1. Log into your ServiceNow instance as an `admin`.
 2. Navigate to **All > System Update Sets > Retrieved Update Sets**.
 3. Click **Import Update Set from XML** at the bottom of the list.
-4. Upload `update-sets/SN_VIP_Network_Escalation.xml` from this repository.
+4. Upload `SN_VIP_Network_Escalation.xml` from this repository.
 5. Open the imported record, click **Preview Update Set**, and then click **Commit Update Set**.
