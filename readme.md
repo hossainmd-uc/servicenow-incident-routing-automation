@@ -61,7 +61,7 @@ To prove functional implementation, this repository includes the following artif
 
 ```text
 ├── README.md                          # Project documentation & architecture overview
-├── LAB_INSTRUCTIONS.md                # Step-by-step Tinker lab guide & technical checkpoints
+├── SETUP_GUIDE.md                # Step-by-step guide
 ├── SN_VIP_Network_Escalation.xml      # Exported ServiceNow Update Set containing the Flow
 └── screenshots/
     ├── 01_baseline_incident_form.png  # Proof of VIP user setup & baseline Incident table
