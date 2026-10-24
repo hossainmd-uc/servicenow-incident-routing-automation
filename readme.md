@@ -95,7 +95,7 @@ To prove functional implementation, this repository includes the following artif
 * **What this shows:** Confirmed the completed escalation: P1 priority, assignment to the Network group, and the automatic escalation work note recorded on the incident.
 
 ---
-
+For complete step-by-step reproduction and verification steps, refer to [SETUP_GUIDE.md](./SETUP_GUIDE.md).
 ## 🚀 How to Import & Test This Project
 If you have your own ServiceNow Personal Developer Instance (PDI), you can deploy this workflow in under 2 minutes:
 1. Log into your ServiceNow instance as an `admin`.
